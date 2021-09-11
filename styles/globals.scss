@@ -1,0 +1,43 @@
+@import "~bootstrap";
+
+// Dark mode
+$surface-dark: #1b1b1b;
+$surface2-dark: #303030;
+$text-light: #e2e2e2;
+$text2-light: #ababab;
+
+// Light mode
+$surface-light: #e2e2e2;
+$surface2-light: #fffffe;
+$text-dark: #303030;
+$text2-dark: #5e5e5e;
+
+// Brand colors
+$brand: #ff6060;
+
+:root {
+  --surface: #{$surface-dark}; 
+  --surface2: #{$surface2-dark};
+  --text: #{$text-light};
+  --text2: #{$text2-light};
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --surface: #{$surface-light};
+    --surface2: #{$surface2-light};
+    --text: #{$text-dark};
+    --text2: #{$text2-dark};
+  }
+}
+
+body {
+  color: var(--text);
+  background-color: var(--surface);
+}
+
+a {
+  color: $brand;
+  &:hover {
+    color: lighten($brand, 5%);
+  }
+}
